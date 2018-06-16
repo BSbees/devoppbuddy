@@ -1,5 +1,6 @@
 package com.devopsbuddy.backend.persistence.domain.backend;
 
+import com.devopsbuddy.enums.RolesEnum;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -22,6 +23,15 @@ public class Role implements Serializable {
     private Set<UserRole> userRoles = new HashSet<>();
 
     public Role() {
+    }
+
+    /**
+     * Full constructor
+     * @param rolesEnum
+     */
+    public Role(RolesEnum rolesEnum){
+        this.id = rolesEnum.getId();
+        this.name = rolesEnum.getRoleName();
     }
 
     public int getId() {
