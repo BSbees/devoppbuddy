@@ -6,22 +6,28 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.io.Serializable;
 
+/**
+ * Created by tedonema on 28/03/2016.
+ */
 @Entity
 public class Plan implements Serializable {
 
-    //Default serial long number
+    /** The Serial Version UID for Serializable classes. */
     private static final long serialVersionUID = 1L;
 
     @Id
     private int id;
+
     private String name;
 
+    /** Default constructor. */
     public Plan() {
+
     }
 
-    public Plan(PlansEnum plansEnum){
+    public Plan(PlansEnum plansEnum) {
         this.id = plansEnum.getId();
-        this.name = plansEnum.getRoleName();
+        this.name = plansEnum.getPlanName();
     }
 
     public int getId() {
@@ -47,14 +53,12 @@ public class Plan implements Serializable {
 
         Plan plan = (Plan) o;
 
-        if (getId() != plan.getId()) return false;
-        return getName() != null ? getName().equals(plan.getName()) : plan.getName() == null;
+        return id == plan.id;
+
     }
 
     @Override
     public int hashCode() {
-        int result = getId();
-        result = 31 * result + (getName() != null ? getName().hashCode() : 0);
-        return result;
+        return id;
     }
 }

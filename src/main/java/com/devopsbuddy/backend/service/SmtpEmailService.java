@@ -7,20 +7,22 @@ import org.springframework.mail.MailSender;
 import org.springframework.mail.SimpleMailMessage;
 
 /**
- * Real implementation of EmailService
+ * Real implementation of an email service.
+ *
+ * Created by tedonema on 22/03/2016.
  */
 public class SmtpEmailService extends AbstractEmailService {
 
-    //Default logger
+    /** The application logger */
     private static final Logger LOG = LoggerFactory.getLogger(SmtpEmailService.class);
 
     @Autowired
     private MailSender mailSender;
 
     @Override
-    public void sendGenericEmailMessage(SimpleMailMessage mailMessage) {
-        LOG.info("Sending email for {}", mailMessage);
-        mailSender.send(mailMessage);
-        LOG.info("Email has been sent");
+    public void sendGenericEmailMessage(SimpleMailMessage message) {
+        LOG.debug("Sending email for: {}", message);
+        mailSender.send(message);
+        LOG.info("Email sent.");
     }
 }

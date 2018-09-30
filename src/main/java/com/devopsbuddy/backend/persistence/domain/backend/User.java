@@ -7,18 +7,28 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Created by tedonema on 28/03/2016.
+ */
 @Entity
-public class User implements Serializable{
+public class User implements Serializable {
 
-    //Default serial long number
+    /** The Serial Version UID for Serializable classes. */
     private static final long serialVersionUID = 1L;
+
+
+    public User() {
+
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     private String username;
+
     private String password;
+
     private String email;
 
     @Column(name = "first_name")
@@ -47,11 +57,10 @@ public class User implements Serializable{
     @JoinColumn(name = "plan_id")
     private Plan plan;
 
+
+
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<UserRole> userRoles = new HashSet<>();
-
-    public User() {
-    }
 
     public long getId() {
         return id;
@@ -67,14 +76,6 @@ public class User implements Serializable{
 
     public void setUsername(String username) {
         this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public String getEmail() {
@@ -149,6 +150,14 @@ public class User implements Serializable{
         this.enabled = enabled;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public Plan getPlan() {
         return plan;
     }
@@ -165,6 +174,8 @@ public class User implements Serializable{
         this.userRoles = userRoles;
     }
 
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -172,40 +183,15 @@ public class User implements Serializable{
 
         User user = (User) o;
 
-        if (getId() != user.getId()) return false;
-        if (isEnabled() != user.isEnabled()) return false;
-        if (!getUsername().equals(user.getUsername())) return false;
-        if (!getPassword().equals(user.getPassword())) return false;
-        if (!getEmail().equals(user.getEmail())) return false;
-        if (!getFirstName().equals(user.getFirstName())) return false;
-        if (!getLastName().equals(user.getLastName())) return false;
-        if (getPhoneNumber() != null ? !getPhoneNumber().equals(user.getPhoneNumber()) : user.getPhoneNumber() != null)
-            return false;
-        if (getDescription() != null ? !getDescription().equals(user.getDescription()) : user.getDescription() != null)
-            return false;
-        if (getCountry() != null ? !getCountry().equals(user.getCountry()) : user.getCountry() != null) return false;
-        if (getProfileImageUrl() != null ? !getProfileImageUrl().equals(user.getProfileImageUrl()) : user.getProfileImageUrl() != null)
-            return false;
-        if (getStripeCustomerId() != null ? !getStripeCustomerId().equals(user.getStripeCustomerId()) : user.getStripeCustomerId() != null)
-            return false;
-        return getPlan() != null ? getPlan().equals(user.getPlan()) : user.getPlan() == null;
+        return id == user.id;
+
     }
 
     @Override
     public int hashCode() {
-        int result = (int) (getId() ^ (getId() >>> 32));
-        result = 31 * result + getUsername().hashCode();
-        result = 31 * result + getPassword().hashCode();
-        result = 31 * result + getEmail().hashCode();
-        result = 31 * result + getFirstName().hashCode();
-        result = 31 * result + getLastName().hashCode();
-        result = 31 * result + (getPhoneNumber() != null ? getPhoneNumber().hashCode() : 0);
-        result = 31 * result + (getDescription() != null ? getDescription().hashCode() : 0);
-        result = 31 * result + (getCountry() != null ? getCountry().hashCode() : 0);
-        result = 31 * result + (getProfileImageUrl() != null ? getProfileImageUrl().hashCode() : 0);
-        result = 31 * result + (getStripeCustomerId() != null ? getStripeCustomerId().hashCode() : 0);
-        result = 31 * result + (isEnabled() ? 1 : 0);
-        result = 31 * result + (getPlan() != null ? getPlan().hashCode() : 0);
-        return result;
+        return (int) (id ^ (id >>> 32));
     }
+
+
 }
+

@@ -7,36 +7,39 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
+/**
+ * Created by tedonema on 20/03/2016.
+ */
 @Controller
-public class ContactController{
-    //Default logger
+public class ContactController {
+
+    /** The application logger */
     private static final Logger LOG = LoggerFactory.getLogger(ContactController.class);
 
-    //Key of the FeedbackPojo object to identify in a model
-    private static final String FEEDBACK_MODEL_KEY = "feedback";
+    /** The key which identifies the feedback payload in the Model. */
+    public static final String FEEDBACK_MODEL_KEY = "feedback";
 
-    //Contact page URL
+    /** The Contact Us view name. */
     private static final String CONTACT_US_VIEW_NAME = "contact/contact";
 
-    //EmailService bean
     @Autowired
     private EmailService emailService;
 
-    @GetMapping("/contact")
-    public String contactGet(ModelMap model){
+    @RequestMapping(value = "/contact", method = RequestMethod.GET)
+    public String contactGet(ModelMap model) {
         FeedbackPojo feedbackPojo = new FeedbackPojo();
-        model.addAttribute(FEEDBACK_MODEL_KEY, feedbackPojo);
-        return CONTACT_US_VIEW_NAME;
+        model.addAttribute(ContactController.FEEDBACK_MODEL_KEY, feedbackPojo);
+        return ContactController.CONTACT_US_VIEW_NAME;
     }
 
-    @PostMapping("/contact")
-    public String contactPost(@ModelAttribute(FEEDBACK_MODEL_KEY) FeedbackPojo feedbackPojo){
-        LOG.info("FeedbackPOJO content: {}", feedbackPojo);
-        emailService.sendFeedbackEmail(feedbackPojo);
-        return CONTACT_US_VIEW_NAME;
+    @RequestMapping(value = "/contact", method = RequestMethod.POST)
+    public String contactPost(@ModelAttribute(FEEDBACK_MODEL_KEY) FeedbackPojo feedback) {
+        LOG.debug("Feedback POJO content: {}", feedback);
+        emailService.sendFeedbackEmail(feedback);
+        return ContactController.CONTACT_US_VIEW_NAME;
     }
 }

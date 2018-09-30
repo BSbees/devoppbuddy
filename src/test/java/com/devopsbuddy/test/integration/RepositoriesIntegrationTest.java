@@ -8,7 +8,6 @@ import com.devopsbuddy.backend.persistence.domain.backend.UserRole;
 import com.devopsbuddy.backend.persistence.repositories.PlanRepository;
 import com.devopsbuddy.backend.persistence.repositories.RoleRepository;
 import com.devopsbuddy.backend.persistence.repositories.UserRepository;
-import com.devopsbuddy.backend.service.UserService;
 import com.devopsbuddy.enums.PlansEnum;
 import com.devopsbuddy.enums.RolesEnum;
 import com.devopsbuddy.utils.UsersUtils;
@@ -17,15 +16,18 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Created by tedonema on 29/03/2016.
+ */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest(classes = DevopsbuddyApplication.class)
-public class RepositoriesIntegrationTests {
+@SpringApplicationConfiguration(classes = DevopsbuddyApplication.class)
+public class RepositoriesIntegrationTest {
 
     @Autowired
     private PlanRepository planRepository;
@@ -36,70 +38,78 @@ public class RepositoriesIntegrationTests {
     @Autowired
     private UserRepository userRepository;
 
+
+
+
     @Before
-    public void init(){
+    public void init() {
         Assert.assertNotNull(planRepository);
         Assert.assertNotNull(roleRepository);
         Assert.assertNotNull(userRepository);
     }
 
     @Test
-    public void createNewPlan() throws Exception{
-        Plan basicPlan = createBasicPlan();
+    public void testCreateNewPlan() throws Exception {
+        Plan basicPlan = createPlan(PlansEnum.BASIC);
         planRepository.save(basicPlan);
-        Plan retrievedPlan = planRepository.findById(PlansEnum.BASIC.getId()).get();
+        Plan retrievedPlan = planRepository.findOne(PlansEnum.BASIC.getId());
         Assert.assertNotNull(retrievedPlan);
     }
 
     @Test
-    public void createNewRole() throws Exception{
-        Role basicRole = createBasicRole(RolesEnum.BASIC);
-        roleRepository.save(basicRole);
-        Role retrievedRole = roleRepository.findById(RolesEnum.BASIC.getId()).get();
+    public void testCreateNewRole() throws Exception {
+
+        Role userRole  = createRole(RolesEnum.BASIC);
+        roleRepository.save(userRole);
+
+        Role retrievedRole = roleRepository.findOne(RolesEnum.BASIC.getId());
         Assert.assertNotNull(retrievedRole);
     }
 
     @Test
-    public void createNewUser() throws Exception{
-        Plan basicPlan = createBasicPlan();
+    public void createNewUser() throws Exception {
+
+        Plan basicPlan = createPlan(PlansEnum.BASIC);
         planRepository.save(basicPlan);
 
         User basicUser = UsersUtils.createBasicUser();
         basicUser.setPlan(basicPlan);
 
-        Role basicRole = createBasicRole(RolesEnum.BASIC);
-        //list of user-role assiociating table entities (here only one)
+        Role basicRole = createRole(RolesEnum.BASIC);
         Set<UserRole> userRoles = new HashSet<>();
         UserRole userRole = new UserRole(basicUser, basicRole);
         userRoles.add(userRole);
 
-        //never basicUser.setUserRoles - can cascade delete every other userRole, roles etc.
         basicUser.getUserRoles().addAll(userRoles);
 
-        for (UserRole u : userRoles) {
-            roleRepository.save(u.getRole());
+        for (UserRole ur : userRoles) {
+            roleRepository.save(ur.getRole());
         }
 
         basicUser = userRepository.save(basicUser);
-        User newUser = userRepository.findById(basicUser.getId()).get();
-        Assert.assertNotNull(newUser);
-        Assert.assertTrue(newUser.getId() != 0);
-        Assert.assertNotNull(newUser.getPlan());
-        Assert.assertTrue(newUser.getPlan().getId() != 0);
-        Set<UserRole> newUserRoles = newUser.getUserRoles();
-        for (UserRole u :
-                newUserRoles) {
-            Assert.assertNotNull(u.getRole());
-            Assert.assertTrue(u.getRole().getId() != 0);
+        User newlyCreatedUser = userRepository.findOne(basicUser.getId());
+        Assert.assertNotNull(newlyCreatedUser);
+        Assert.assertTrue(newlyCreatedUser.getId() != 0);
+        Assert.assertNotNull(newlyCreatedUser.getPlan());
+        Assert.assertNotNull(newlyCreatedUser.getPlan().getId());
+        Set<UserRole> newlyCreatedUserUserRoles = newlyCreatedUser.getUserRoles();
+        for (UserRole ur : newlyCreatedUserUserRoles) {
+            Assert.assertNotNull(ur.getRole());
+            Assert.assertNotNull(ur.getRole().getId());
         }
 
     }
 
-    private Role createBasicRole(RolesEnum rolesEnum) {
+    //-----------------> Private methods
+
+    private Plan createPlan(PlansEnum plansEnum) {
+        return new Plan(plansEnum);
+    }
+
+    private Role createRole(RolesEnum rolesEnum) {
         return new Role(rolesEnum);
     }
 
-    private Plan createBasicPlan() {
-        return new Plan(PlansEnum.BASIC);
-    }
+
+
 }

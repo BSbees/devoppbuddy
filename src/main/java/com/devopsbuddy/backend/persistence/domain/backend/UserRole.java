@@ -1,23 +1,23 @@
 package com.devopsbuddy.backend.persistence.domain.backend;
 
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import javax.persistence.*;
 import java.io.Serializable;
 
+/**
+ * Created by tedonema on 28/03/2016.
+ */
 @Entity
 @Table(name = "user_role")
-public class UserRole implements Serializable{
+public class UserRole implements Serializable {
 
-    //Default logger
-    private static final Logger LOG = LoggerFactory.getLogger(UserRole.class);
+    /** The Serial Version UID for Serializable classes. */
+    private static final long serialVersionUID = 1L;
 
     public UserRole() {
+
     }
 
-    public UserRole(User user, Role role){
+    public UserRole(User user, Role role) {
         this.user = user;
         this.role = role;
     }
@@ -55,14 +55,15 @@ public class UserRole implements Serializable{
 
         UserRole userRole = (UserRole) o;
 
-        if (getUser() != null ? !getUser().equals(userRole.getUser()) : userRole.getUser() != null) return false;
-        return getRole() != null ? getRole().equals(userRole.getRole()) : userRole.getRole() == null;
+        if (!user.equals(userRole.user)) return false;
+        return role.equals(userRole.role);
+
     }
 
     @Override
     public int hashCode() {
-        int result = getUser() != null ? getUser().hashCode() : 0;
-        result = 31 * result + (getRole() != null ? getRole().hashCode() : 0);
+        int result = user.hashCode();
+        result = 31 * result + role.hashCode();
         return result;
     }
 }

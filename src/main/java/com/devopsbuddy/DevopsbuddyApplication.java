@@ -13,14 +13,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import java.util.HashSet;
 import java.util.Set;
 
 @SpringBootApplication
-public class DevopsbuddyApplication implements CommandLineRunner{
+public class DevopsbuddyApplication implements CommandLineRunner {
 
+	/** The application logger */
 	private static final Logger LOG = LoggerFactory.getLogger(DevopsbuddyApplication.class);
+
 	@Autowired
 	private UserService userService;
 
@@ -34,7 +37,7 @@ public class DevopsbuddyApplication implements CommandLineRunner{
 		Set<UserRole> userRoles = new HashSet<>();
 		userRoles.add(new UserRole(user, new Role(RolesEnum.BASIC)));
 		LOG.debug("Creating user with username {}", user.getUsername());
-		userService.createUser(user, PlansEnum.BASIC, userRoles);
-		LOG.debug("User {} created", user.getUsername());
+		userService.createUser(user, PlansEnum.PRO, userRoles);
+		LOG.info("User {} created", user.getUsername());
 	}
 }

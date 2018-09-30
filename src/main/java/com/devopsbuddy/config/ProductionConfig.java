@@ -7,13 +7,16 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.context.annotation.PropertySource;
 
+/**
+ * Created by tedonema on 21/03/2016.
+ */
 @Configuration
 @Profile("prod")
-@PropertySource("file:///${user.home}/Documents/devbuddy/springConfig/application-prod.properties")
+@PropertySource("file:///${user.home}/.devopsbuddy/application-prod.properties")
 public class ProductionConfig {
 
     @Bean
-    public EmailService emailService(){
+    public EmailService emailService() {
         return new SmtpEmailService();
     }
 }

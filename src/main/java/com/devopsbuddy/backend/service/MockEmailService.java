@@ -5,17 +5,19 @@ import org.slf4j.LoggerFactory;
 import org.springframework.mail.SimpleMailMessage;
 
 /**
- * Mock implementation of EmailService
+ * Mock implementation of an email service.
+ *
+ * Created by tedonema on 22/03/2016.
  */
 public class MockEmailService extends AbstractEmailService {
 
-    //Default logger
+    /** The application logger */
     private static final Logger LOG = LoggerFactory.getLogger(MockEmailService.class);
 
     @Override
-    public void sendGenericEmailMessage(SimpleMailMessage mailMessage) {
-        LOG.info("Sending message");
-        LOG.info(mailMessage.toString());
-        LOG.info("Email has been sent");
+    public void sendGenericEmailMessage(SimpleMailMessage message) {
+        LOG.debug("Simulating an email service...");
+        LOG.info(message.toString());
+        LOG.debug("Email sent.");
     }
 }

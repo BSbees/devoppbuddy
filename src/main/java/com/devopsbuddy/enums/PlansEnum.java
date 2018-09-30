@@ -1,26 +1,28 @@
 package com.devopsbuddy.enums;
 
 /**
- * Roles enum
+ * Created by tedonema on 30/03/2016.
  */
 public enum PlansEnum {
 
-    BASIC(1, "ROLE_BASIC"),
-    PRO(2, "ROLE_PRO");
+    BASIC(1, "Basic"),
+    PRO(2, "Pro");
+
 
     private final int id;
-    private final String roleName;
 
-    PlansEnum(int id, String roleName) {
+    private final String planName;
+
+    PlansEnum(int id, String planName) {
         this.id = id;
-        this.roleName = roleName;
+        this.planName = planName;
     }
 
     public int getId() {
         return id;
     }
 
-    public String getRoleName() {
-        return roleName;
+    public String getPlanName() {
+        return planName;
     }
 }

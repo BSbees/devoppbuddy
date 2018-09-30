@@ -13,6 +13,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Set;
 
+/**
+ * Created by tedonema on 30/03/2016.
+ */
 @Service
 @Transactional(readOnly = true)
 public class UserService {
@@ -21,29 +24,31 @@ public class UserService {
     private RoleRepository roleRepository;
 
     @Autowired
-    private UserRepository userRepository;
-
-    @Autowired
     private PlanRepository planRepository;
 
-    @Transactional
-    public User createUser(User user, PlansEnum plansEnum, Set<UserRole> userRoles){
-        Plan plan = new Plan(plansEnum);
+    @Autowired
+    private UserRepository userRepository;
 
-        //Make sure plan exists in db
-        if(!planRepository.existsById(plansEnum.getId())){
+    @Transactional
+    public User createUser(User user, PlansEnum plansEnum, Set<UserRole> userRoles) {
+
+        Plan plan = new Plan(plansEnum);
+        // It makes sure the plans exist in the database
+        if (!planRepository.exists(plansEnum.getId())) {
             plan = planRepository.save(plan);
         }
 
         user.setPlan(plan);
 
-        for (UserRole u :
-                userRoles) {
-            roleRepository.save(u.getRole());
+        for (UserRole ur : userRoles) {
+            roleRepository.save(ur.getRole());
         }
 
         user.getUserRoles().addAll(userRoles);
+
         user = userRepository.save(user);
+
         return user;
+
     }
 }

@@ -5,20 +5,24 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.config.authentication.AuthenticationManagerFactoryBean;
 
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Created by tedonema on 26/03/2016.
+ */
 @Configuration
+@EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private Environment env;
 
-    //Public URL's access
-    private static final String [] PUBLIC_MATCHERS = {
+    /** Public URLs. */
+    private static final String[] PUBLIC_MATCHERS = {
             "/webjars/**",
             "/css/**",
             "/js/**",
@@ -31,15 +35,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     };
 
     @Override
-    protected void configure(HttpSecurity security) throws Exception{
-        List<String> activeProfiles = Arrays.asList(env.getActiveProfiles());
+    protected void configure(HttpSecurity http) throws Exception {
 
-        if (activeProfiles.contains("dev")){
-            security.csrf().disable();
-            security.headers().frameOptions().disable();
+        List<String> activeProfiles = Arrays.asList(env.getActiveProfiles());
+        if (activeProfiles.contains("dev")) {
+            http.csrf().disable();
+            http.headers().frameOptions().disable();
         }
 
-        security.authorizeRequests()
+        http
+                .authorizeRequests()
                 .antMatchers(PUBLIC_MATCHERS).permitAll()
                 .anyRequest().authenticated()
                 .and()
@@ -50,9 +55,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Autowired
-    public void configureGlobal(AuthenticationManagerBuilder builder) throws Exception{
-        builder.inMemoryAuthentication()
-                .withUser("user").password("{noop}password")
+    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+        auth
+                .inMemoryAuthentication()
+                .withUser("user").password("password")
                 .roles("USER");
     }
 }

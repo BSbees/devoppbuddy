@@ -1,18 +1,20 @@
 package com.devopsbuddy.backend.persistence.domain.backend;
 
 import com.devopsbuddy.enums.RolesEnum;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Created by tedonema on 28/03/2016.
+ */
 @Entity
 public class Role implements Serializable {
-    //Default logger
-    private static final Logger LOG = LoggerFactory.getLogger(Role.class);
+
+    /** The Serial Version UID for Serializable classes. */
+    private static final long serialVersionUID = 1L;
 
     @Id
     private int id;
@@ -23,13 +25,14 @@ public class Role implements Serializable {
     private Set<UserRole> userRoles = new HashSet<>();
 
     public Role() {
+
     }
 
     /**
-     * Full constructor
+     * Full constructor. 
      * @param rolesEnum
      */
-    public Role(RolesEnum rolesEnum){
+    public Role(RolesEnum rolesEnum) {
         this.id = rolesEnum.getId();
         this.name = rolesEnum.getRoleName();
     }
@@ -65,11 +68,12 @@ public class Role implements Serializable {
 
         Role role = (Role) o;
 
-        return getId() == role.getId();
+        return id == role.id;
+
     }
 
     @Override
     public int hashCode() {
-        return getId();
+        return id;
     }
 }
