@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.devopsbuddy.DevopsbuddyApplicationTests" time="0.028" tests="1" errors="1" skipped="0" failures="0">
+<testsuite name="com.devopsbuddy.test.integration.UserServiceIntegrationTest" time="0.001" tests="1" errors="1" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_144\jre\bin"/>
@@ -64,12 +64,12 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="testMessageByLocaleService" classname="com.devopsbuddy.DevopsbuddyApplicationTests" time="0.028">
+  <testcase name="testCreateNewUser" classname="com.devopsbuddy.test.integration.UserServiceIntegrationTest" time="0.001">
     <error message="Failed to load ApplicationContext" type="java.lang.IllegalStateException">java.lang.IllegalStateException: Failed to load ApplicationContext
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
 	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
-	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:183)
-	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:123)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
 	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:228)
 	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:230)
 	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
@@ -112,8 +112,8 @@ Caused by: org.springframework.beans.factory.BeanCreationException: Error creati
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
 	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
-	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:183)
-	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:123)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
 	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:228)
 	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:230)
 	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
@@ -158,8 +158,8 @@ Caused by: org.springframework.beans.factory.BeanCreationException: Could not au
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
 	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
-	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:183)
-	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:123)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
 	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:228)
 	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:230)
 	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
@@ -215,8 +215,8 @@ Caused by: org.springframework.beans.factory.BeanCreationException: Error creati
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
 	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
-	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:183)
-	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:123)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
 	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:228)
 	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:230)
 	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
@@ -274,8 +274,8 @@ Caused by: org.springframework.beans.factory.BeanCreationException: Could not au
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
 	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
-	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:183)
-	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:123)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
 	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:228)
 	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:230)
 	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
@@ -353,8 +353,8 @@ Caused by: org.springframework.beans.factory.BeanCreationException: Error creati
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
 	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
-	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:183)
-	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:123)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
 	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:228)
 	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:230)
 	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
@@ -434,8 +434,8 @@ Caused by: org.springframework.beans.factory.BeanCreationException: Could not au
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
 	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
-	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:183)
-	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:123)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
 	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:228)
 	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:230)
 	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
@@ -518,8 +518,8 @@ Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No q
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
 	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
-	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:183)
-	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:123)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
 	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:228)
 	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:230)
 	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
@@ -544,18 +544,9 @@ Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No q
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
 </error>
-    <system-out><![CDATA[5306 [main] INFO  o.s.t.c.s.AbstractContextLoader - Could not detect default resource locations for test class [com.devopsbuddy.DevopsbuddyApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
-5539 [main] INFO  o.s.t.c.w.WebTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-5842 [main] INFO  o.s.t.c.w.WebTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@255b53dc, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1dd92fe2, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6b53e23f, org.springframework.test.context.support.DirtiesContextTestExecutionListener@64d2d351, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1b68b9a4, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4f9a3314]
-5990 [main] INFO  o.s.t.c.s.AbstractContextLoader - Could not detect default resource locations for test class [com.devopsbuddy.test.integration.RepositoriesIntegrationTest]: no resource found for suffixes {-context.xml, Context.groovy}.
-6001 [main] INFO  o.s.t.c.s.DefaultTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-6008 [main] INFO  o.s.t.c.s.DefaultTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2d2e5f00, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@4c40b76e, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@2ea6137, org.springframework.test.context.support.DirtiesContextTestExecutionListener@41ee392b, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1e67a849, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@57d5872c]
-6062 [main] INFO  o.s.t.c.s.AbstractContextLoader - Could not detect default resource locations for test class [com.devopsbuddy.test.integration.UserServiceIntegrationTest]: no resource found for suffixes {-context.xml, Context.groovy}.
-6074 [main] INFO  o.s.t.c.s.DefaultTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-6076 [main] INFO  o.s.t.c.s.DefaultTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5d47c63f, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@5ea434c8, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@3bbc39f8, org.springframework.test.context.support.DirtiesContextTestExecutionListener@4ae3c1cd, org.springframework.test.context.transaction.TransactionalTestExecutionListener@29f69090, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@568bf312]
-6148 [main] INFO  o.s.t.c.s.AbstractContextLoader - Could not detect default resource locations for test class [com.devopsbuddy.DevopsbuddyApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
-6161 [main] INFO  o.s.t.c.w.WebTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-6162 [main] INFO  o.s.t.c.w.WebTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5af97850, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@5ef60048, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@1d548a08, org.springframework.test.context.support.DirtiesContextTestExecutionListener@16aa0a0a, org.springframework.test.context.transaction.TransactionalTestExecutionListener@780cb77, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@691a7f8f]
+    <system-out><![CDATA[53537 [main] INFO  o.s.t.c.s.AbstractContextLoader - Could not detect default resource locations for test class [com.devopsbuddy.test.integration.UserServiceIntegrationTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+53544 [main] INFO  o.s.t.c.s.DefaultTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+53546 [main] INFO  o.s.t.c.s.DefaultTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@530df3ab, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@5e72c82a, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@aaa7000, org.springframework.test.context.support.DirtiesContextTestExecutionListener@64fba3e6, org.springframework.test.context.transaction.TransactionalTestExecutionListener@58d79479, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@102c24d1]
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -565,13 +556,11 @@ Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No q
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::        (v1.3.2.RELEASE)
 
-10079 [main] INFO  c.d.DevopsbuddyApplicationTests - Starting DevopsbuddyApplicationTests on BS with PID 5588 (C:\Users\Bartosz\Documents\devbuddy\devopsbuddyIntelliJ\devopsbuddy\target\test-classes started by Bartosz in C:\Users\Bartosz\Documents\devbuddy\devopsbuddyIntelliJ\devopsbuddy)
-10081 [main] DEBUG c.d.DevopsbuddyApplicationTests - Running with Spring Boot v1.3.2.RELEASE, Spring v4.2.4.RELEASE
-10083 [main] INFO  c.d.DevopsbuddyApplicationTests - The following profiles are active: dev
-12544 [main] INFO  o.s.w.c.s.GenericWebApplicationContext - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@2638011: startup date [Sun Sep 30 20:41:52 CEST 2018]; root of context hierarchy
-20728 [main] INFO  o.s.b.f.s.DefaultListableBeanFactory - Overriding bean definition for bean 'beanNameViewResolver' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]]
-22996 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$b6653e5f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-26909 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+53996 [main] INFO  c.d.t.i.UserServiceIntegrationTest - Starting UserServiceIntegrationTest on BS with PID 5588 (C:\Users\Bartosz\Documents\devbuddy\devopsbuddyIntelliJ\devopsbuddy\target\test-classes started by Bartosz in C:\Users\Bartosz\Documents\devbuddy\devopsbuddyIntelliJ\devopsbuddy)
+53998 [main] DEBUG c.d.t.i.UserServiceIntegrationTest - Running with Spring Boot v1.3.2.RELEASE, Spring v4.2.4.RELEASE
+53998 [main] INFO  c.d.t.i.UserServiceIntegrationTest - The following profiles are active: dev
+54007 [main] INFO  o.s.c.a.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@27575bcd: startup date [Sun Sep 30 20:42:33 CEST 2018]; root of context hierarchy
+58475 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
 Hibernate: 
     drop table plan if exists
 Hibernate: 
@@ -634,8 +623,8 @@ Hibernate:
         add constraint FK_apcc8lxk2xnug8377fatvbn04 
         foreign key (user_id) 
         references user
-39637 [main] WARN  o.s.w.c.s.GenericWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'devopsbuddyApplication': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.devopsbuddy.backend.service.UserService com.devopsbuddy.DevopsbuddyApplication.userService; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userService': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder com.devopsbuddy.backend.service.UserService.passwordEncoder; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'securityConfig': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private org.springframework.security.core.userdetails.UserDetailsService com.devopsbuddy.config.SecurityConfig.userDetailsService; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [org.springframework.security.core.userdetails.UserDetailsService] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-39642 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+58897 [main] WARN  o.s.c.a.AnnotationConfigApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'devopsbuddyApplication': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.devopsbuddy.backend.service.UserService com.devopsbuddy.DevopsbuddyApplication.userService; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userService': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder com.devopsbuddy.backend.service.UserService.passwordEncoder; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'securityConfig': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private org.springframework.security.core.userdetails.UserDetailsService com.devopsbuddy.config.SecurityConfig.userDetailsService; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [org.springframework.security.core.userdetails.UserDetailsService] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+58898 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 Hibernate: 
     drop table plan if exists
 Hibernate: 
@@ -644,7 +633,7 @@ Hibernate:
     drop table user if exists
 Hibernate: 
     drop table user_role if exists
-39764 [main] ERROR o.s.boot.SpringApplication - Application startup failed
+58917 [main] ERROR o.s.boot.SpringApplication - Application startup failed
 org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'devopsbuddyApplication': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.devopsbuddy.backend.service.UserService com.devopsbuddy.DevopsbuddyApplication.userService; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userService': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder com.devopsbuddy.backend.service.UserService.passwordEncoder; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'securityConfig': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private org.springframework.security.core.userdetails.UserDetailsService com.devopsbuddy.config.SecurityConfig.userDetailsService; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [org.springframework.security.core.userdetails.UserDetailsService] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334) ~[spring-beans-4.2.4.RELEASE.jar:4.2.4.RELEASE]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1214) ~[spring-beans-4.2.4.RELEASE.jar:4.2.4.RELEASE]
@@ -664,8 +653,8 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98) [spring-test-4.2.4.RELEASE.jar:4.2.4.RELEASE]
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116) [spring-test-4.2.4.RELEASE.jar:4.2.4.RELEASE]
 	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83) [spring-test-4.2.4.RELEASE.jar:4.2.4.RELEASE]
-	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:183) [spring-test-4.2.4.RELEASE.jar:4.2.4.RELEASE]
-	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:123) [spring-test-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117) [spring-test-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83) [spring-test-4.2.4.RELEASE.jar:4.2.4.RELEASE]
 	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:228) [spring-test-4.2.4.RELEASE.jar:4.2.4.RELEASE]
 	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:230) [spring-test-4.2.4.RELEASE.jar:4.2.4.RELEASE]
 	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) [spring-test-4.2.4.RELEASE.jar:4.2.4.RELEASE]
@@ -747,13 +736,13 @@ Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No q
 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1014) ~[spring-beans-4.2.4.RELEASE.jar:4.2.4.RELEASE]
 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:545) ~[spring-beans-4.2.4.RELEASE.jar:4.2.4.RELEASE]
 	... 79 common frames omitted
-39780 [main] INFO  o.s.b.l.ClasspathLoggingApplicationListener - Application failed to start with classpath: [file:/C:/Users/Bartosz/Documents/devbuddy/devopsbuddyIntelliJ/devopsbuddy/target/surefire/surefirebooter5350806117271023280.jar]
-39786 [main] ERROR o.s.test.context.TestContextManager - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@5af97850] to prepare test instance [com.devopsbuddy.DevopsbuddyApplicationTests@3271ec2a]
+58921 [main] INFO  o.s.b.l.ClasspathLoggingApplicationListener - Application failed to start with classpath: [file:/C:/Users/Bartosz/Documents/devbuddy/devopsbuddyIntelliJ/devopsbuddy/target/surefire/surefirebooter5350806117271023280.jar]
+58924 [main] ERROR o.s.test.context.TestContextManager - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@aaa7000] to prepare test instance [com.devopsbuddy.test.integration.UserServiceIntegrationTest@123426a9]
 java.lang.IllegalStateException: Failed to load ApplicationContext
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124) ~[spring-test-4.2.4.RELEASE.jar:4.2.4.RELEASE]
 	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83) ~[spring-test-4.2.4.RELEASE.jar:4.2.4.RELEASE]
-	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:183) ~[spring-test-4.2.4.RELEASE.jar:4.2.4.RELEASE]
-	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:123) ~[spring-test-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117) ~[spring-test-4.2.4.RELEASE.jar:4.2.4.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83) ~[spring-test-4.2.4.RELEASE.jar:4.2.4.RELEASE]
 	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:228) ~[spring-test-4.2.4.RELEASE.jar:4.2.4.RELEASE]
 	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:230) [spring-test-4.2.4.RELEASE.jar:4.2.4.RELEASE]
 	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) [spring-test-4.2.4.RELEASE.jar:4.2.4.RELEASE]
