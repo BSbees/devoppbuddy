@@ -66,6 +66,17 @@ public class User implements Serializable, UserDetails {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<UserRole> userRoles = new HashSet<>();
 
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
+    private Set<PasswordResetToken> resetTokens = new HashSet<>();
+
+    public Set<PasswordResetToken> getResetTokens() {
+        return resetTokens;
+    }
+
+    public void setResetTokens(Set<PasswordResetToken> resetTokens) {
+        this.resetTokens = resetTokens;
+    }
+
     public long getId() {
         return id;
     }
